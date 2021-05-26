@@ -15,7 +15,7 @@
 	<section class="breadcrumb-section center">
 		<div class="container">
 			<ul>
-				<li><a href="index.html">
+				<li><a href="index.php">
 						<img src="img/home.svg" alt="" class="svg">
 						<span>Trang Chủ</span>
 					</a></li>
@@ -41,7 +41,7 @@
 					<span>Đăng ngày <?php echo date("d/m/Y",strtotime($row_select_news['new_date']));?></span>
 				</div>
 				<div class="info" style="padding-bottom:15px;">
-					<img src="img/news/new-dt.jpg" alt="">
+					<img src="img/news/<?php echo $row_select_news['new_image'];?>" alt="">
 					<div class="text">
 						<?php echo $row_select_news['new_status'];?>
 					</div>

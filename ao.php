@@ -45,9 +45,9 @@
 	<!-- end breadcrumb -->
 	<!-- colection -->
 	<?php 
-				$sql_product_shirt = mysqli_query($con, "SELECT * FROM tbl_product,tbl_category 
-				WHERE tbl_product.category_id = tbl_category.category_id AND tbl_product.category_id = 1
-				ORDER BY product_id DESC LIMIT 12");
+				$sql_product_shirt = mysqli_query($con, "SELECT * FROM tbl_product,tbl_category
+				WHERE tbl_product.category_id = 1 AND tbl_product.category_id = tbl_category.category_id
+				ORDER BY tbl_product.product_id DESC LIMIT 13 ");
 				$title = mysqli_fetch_array($sql_product_shirt);
 	?>
 	<section class="colection-section">

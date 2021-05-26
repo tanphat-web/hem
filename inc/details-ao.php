@@ -48,8 +48,9 @@
 							alt="" style="width: 100%;     height: 100%;	object-fit: cover;">
 					</div>
 				</div>
-				<div class="img-text">
+				<div class="img-text" style="line-height:1.55;">
 					<?php echo $row_product_details['product_details'];?>
+					<?php echo $row_product_details['product_desc'];?>
 				</div>
 			</div>
 			<div class="col-lg-4">

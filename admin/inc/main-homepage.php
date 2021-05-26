@@ -11,7 +11,7 @@
 			<i class='bx bx-menu-alt-right'></i>
 		</div>
 		<div class="main-title">
-			Tất cả đơn hàng
+			Đơn hàng gần đây
 		</div>
 	</div>
 	<div class="main-content">
@@ -19,13 +19,10 @@
 			<div class="col-12">
 				<!-- ORDERS TABLE -->
 				<div class="box">
-					<div class="box-header">
-						liệt kê đơn hàng
-					</div>
 					<?php
 				$sql_select = mysqli_query($con,"SELECT * FROM tbl_customer,tbl_checkout 
 				WHERE 
-				tbl_checkout.customer_id=tbl_customer.customer_id GROUP BY code DESC"); 
+				tbl_checkout.customer_id=tbl_customer.customer_id GROUP BY code DESC limit 4"); 
 				?>
 					<div class="box-body overflow-scroll">
 						<table>
