@@ -1,0 +1,125 @@
+#contact {
+	.shop {
+		h2 {
+			font-size: 30px;
+			font-weight: 700;
+			margin: 0;
+			padding: 10px 0;
+			position: relative;
+			@include tablet {
+				font-size: 25px;
+			}
+			&::after {
+				content: "";
+				width: 60px;
+				height: 4px;
+				background: $black-bg-cl;
+				position: absolute;
+				top: 100%;
+				left: 0;
+				display: block;
+				border-radius: 4px;
+			}
+		}
+		.contact {
+			padding: 20px 0;
+			ul {
+				padding: 20px 0;
+				li {
+					&:not(:last-child) {
+						margin-bottom: 15px;
+					}
+					span {
+						display: flex;
+						line-height: 1.6;
+						a {
+							display: inline;
+							margin-left: 3px;
+						}
+					}
+					h3 {
+						font-family: b;
+						font-size: 15px;
+						margin-bottom: 7px;
+					}
+				}
+			}
+		}
+		.map {
+			position: sticky;
+			height: 100vh;
+			top: 0;
+			@include maxW(991px) {
+				height: 50vh;
+				border-bottom: 1px solid #ededed;
+				position: inherit;
+			}
+		}
+		form {
+			padding: 20px 0;
+			input {
+				border: 1px solid #e7e7e7;
+				box-shadow: none;
+				height: 45px;
+				font-weight: 500;
+				padding: 0 20px;
+				background: #fbfbfb;
+				color: #252a2b;
+				width: 100%;
+				margin: 10px 0;
+				outline: none;
+			}
+			textarea {
+				resize: none;
+				border: 1px solid #e7e7e7;
+				box-shadow: none;
+				font-weight: 500;
+				background: #fbfbfb;
+				color: #252a2b;
+				width: 100%;
+				padding: 20px;
+				outline: none;
+			}
+			button {
+				color: $white-cl;
+				border-color: #000;
+				height: 55px;
+				line-height: 55px;
+				padding: 0 30px;
+				border-radius: 0;
+				font-weight: 600;
+				text-transform: uppercase;
+				outline: none;
+				cursor: pointer;
+				background: $white-bg-cl;
+				position: relative;
+				z-index: 2;
+				overflow: hidden;
+				margin-top: 10px;
+				&:hover {
+					color: $black-cl;
+					&::after {
+						transform-origin: center right;
+						transform: translateX(100%);
+						transform: scale(0, 1);
+					}
+				}
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					background: $black-bg-cl;
+					display: block;
+					z-index: -1;
+					transform-origin: left center;
+					transform: scale(1, 1);
+					transition: transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+						-webkit-transform 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,241 @@
+#homepages {
+	.carousel-section {
+		position: relative;
+		&:hover {
+			.control-group {
+				opacity: 1;
+			}
+		}
+		.main-carousel {
+			.carousel-items {
+				width: 100%;
+				img {
+					width: 100%;
+				}
+			}
+		}
+		.control-group {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			width: 100%;
+			z-index: 30;
+			@include betweenFlex();
+			padding: 0 10px;
+			opacity: 0;
+			transition: $t;
+			button {
+				width: 40px;
+				height: auto;
+				outline: none;
+				background: transparent;
+				border: none;
+				cursor: pointer;
+				opacity: 0.6;
+			}
+		}
+	}
+	.banner-section {
+		padding: 60px 0;
+		@include tablet {
+			padding: 30px 0 10px 0;
+		}
+		.banner-list {
+			@include mobile {
+				display: none;
+			}
+		}
+		.banner-items {
+			.text {
+				text-transform: uppercase;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				a.details {
+					border: 1px solid $black-bg-cl;
+					padding: 5px 10px;
+					font-size: 13px;
+					position: relative;
+					z-index: 2;
+					transition: color 400ms ease;
+					margin: 0;
+					&:hover {
+						color: $white-cl;
+					}
+					span {
+						position: absolute;
+						width: 0;
+						height: 0;
+						left: 0;
+						top: 0;
+						transform: translate(-50%, -50%);
+						border-radius: 40%;
+						background: #000;
+						transition: 600ms ease;
+						z-index: 1;
+					}
+				}
+				.btn-hover {
+					position: relative;
+					overflow: hidden;
+				}
+				a {
+					display: inline-block;
+					text-transform: uppercase;
+					font-size: 15px;
+					margin: 10px 0;
+				}
+			}
+			a {
+				.img {
+					position: relative;
+					overflow: hidden;
+					&:hover {
+						.img-hover {
+							span {
+								transform: scale(1);
+							}
+						}
+						&::before,
+						&::after {
+							transform: scale(1);
+						}
+					}
+					&::after,
+					&::before {
+						content: "";
+						position: absolute;
+						top: 10px;
+						bottom: 10px;
+						width: 2px;
+						height: calc(100% - 20px);
+						display: block;
+						background: #f1ebeb;
+						transition: all 0.4s ease-in-out;
+						transform: scale(0);
+					}
+					&::before {
+						right: 10px;
+					}
+					&::after {
+						left: 10px;
+					}
+					.img-hover {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						display: flex;
+						flex-direction: column;
+						justify-content: space-between;
+						align-items: center;
+						padding: 0 10px;
+						span {
+							width: 100%;
+							height: 2px;
+							display: block;
+							background: #f1ebeb;
+							transition: all 0.4s ease-in-out;
+							transform: scale(0);
+							&:nth-child(1) {
+								margin-top: 10px;
+							}
+							&:nth-child(2) {
+								margin-bottom: 10px;
+							}
+						}
+					}
+				}
+			}
+		}
+		.banner-mobile {
+			width: 100%;
+			display: none;
+			@include mobile {
+				display: block;
+			}
+			.banner-mobile__carousel {
+				.banner-items {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	@include mobile {
+		.banner-products {
+			padding-top: 20px;
+		}
+	}
+	.product-banner {
+		@include mobile {
+			padding-top: 40px;
+		}
+		&__content {
+			@include mobile {
+				padding-top: 40px;
+			}
+			h3.title {
+				position: relative;
+				font-weight: 700;
+				font-size: 20px;
+				display: inline-block;
+				line-height: 1.1;
+				&::after {
+					content: "";
+					display: block;
+					width: 69%;
+					height: 1px;
+					position: absolute;
+					bottom: -8px;
+					left: 0%;
+					background: $black-bg-cl;
+				}
+			}
+			p.intro {
+				margin: 30px 0;
+				width: 85%;
+				line-height: 21px;
+				font-size: 14px;
+				color: #252a2b;
+				@include mobile {
+					width: 100%;
+				}
+			}
+			.product-carousel {
+				.product-items {
+					&.product-carousel__items {
+						width: 50%;
+						@include maxW(535px) {
+							width: 100%;
+						}
+					}
+					.product-items__img {
+						border: none;
+					}
+				}
+			}
+		}
+	}
+}
+.accessories-section,
+.trousers-section,
+.shirt-section {
+	.product-list {
+		display: flex !important;
+	}
+}
+@include maxW(991px) {
+	.product-items__img {
+		border: none !important;
+		padding: 0 !important;
+	}
+	.action {
+		display: none !important;
+	}
+}
+.col-6 {
+	padding: 0 10px;
+}
